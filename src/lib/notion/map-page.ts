@@ -7,6 +7,7 @@ import {
   getDateStart,
   getGrapes,
   getNumber,
+  getRating,
   getSelect,
   getStringish,
   getTitle,
@@ -50,7 +51,7 @@ export function mapNotionPageToTastingNote(page: NotionPageLike): TastingNote {
     vintage: getVintage(prop(properties, names, "vintage")),
     color: getSelect(prop(properties, names, "color")) ??
       getStringish(prop(properties, names, "color")),
-    rating: getNumber(prop(properties, names, "rating")),
+    rating: getRating(prop(properties, names, "rating")),
     price: getNumber(prop(properties, names, "price")),
     notes: getStringish(prop(properties, names, "notes")),
     occasion: getStringish(prop(properties, names, "occasion")),

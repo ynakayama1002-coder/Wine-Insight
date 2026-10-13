@@ -30,10 +30,14 @@ describe("aggregateNotes", () => {
     const result = aggregateNotes(notes, week);
     expect(result.totalCount).toBe(3);
     expect(result.ratedCount).toBe(2);
-    expect(result.averageRating).toBe(4.3); // (4.5 + 4) / 2
+    expect(result.averageRating).toBe(4.5); // (5 + 4) / 2
     expect(result.byCountry).toEqual([
       { key: "France", count: 2 },
       { key: "Germany", count: 1 },
+    ]);
+    expect(result.byRegion).toEqual([
+      { key: "Bordeaux", count: 1 },
+      { key: "Mosel", count: 1 },
     ]);
     expect(result.byGrape.map((g) => g.key)).toContain("Merlot");
     expect(result.insufficientSample).toBe(false); // 3 >= weekly threshold

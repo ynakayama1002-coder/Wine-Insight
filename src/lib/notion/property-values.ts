@@ -57,6 +57,29 @@ export function getNumber(prop: NotionProp): number | null {
   return null;
 }
 
+/**
+ * 好み（★〜★★★★★）や数値プロパティから評価点を取る。
+ * 読めない形式は null（推測補完しない）。
+ */
+export function getRating(prop: NotionProp): number | null {
+  if (!prop) return null;
+
+  const fromNumber = getNumber(prop);
+  if (fromNumber != null) return fromNumber;
+
+  const label = getSelect(prop) ?? getRichText(prop);
+  if (!label) return null;
+
+  // ★ / ☆ / ★︎ などの星の個数（1〜5）
+  const starCount = (label.match(/[★☆✦✪⋆*]/gu) || []).length;
+  if (starCount >= 1 && starCount <= 5) return starCount;
+
+  const asNum = Number(label);
+  if (!Number.isNaN(asNum)) return asNum;
+
+  return null;
+}
+
 export function getDateStart(prop: NotionProp): string | null {
   if (!prop || prop.type !== "date") return null;
   const start = (prop.date as { start?: string } | null)?.start;

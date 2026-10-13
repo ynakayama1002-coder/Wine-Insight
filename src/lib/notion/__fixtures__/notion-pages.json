@@ -14,9 +14,9 @@
         "type": "rich_text",
         "rich_text": [{ "plain_text": "Château Demo" }]
       },
-      "産地": {
-        "type": "select",
-        "select": { "name": "Bordeaux" }
+      "地域": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "Bordeaux" }]
       },
       "国": {
         "type": "select",
@@ -29,7 +29,7 @@
           { "name": "Merlot" }
         ]
       },
-      "ヴィンテージ": {
+      "Vintage": {
         "type": "number",
         "number": 2018
       },
@@ -37,19 +37,22 @@
         "type": "select",
         "select": { "name": "赤" }
       },
+      "好み": {
+        "type": "select",
+        "select": { "name": "★★★★★" }
+      },
       "評価": {
-        "type": "number",
-        "number": 4.5
+        "type": "multi_select",
+        "multi_select": [
+          { "name": "丸みのある" },
+          { "name": "ふくよか" }
+        ]
       },
-      "価格": {
-        "type": "number",
-        "number": 4500
-      },
-      "テイスティングノート": {
+      "テイスティングコメント": {
         "type": "rich_text",
         "rich_text": [{ "plain_text": "カシスと杉。タンニンは静か。" }]
       },
-      "シーン": {
+      "場所": {
         "type": "select",
         "select": { "name": "自宅" }
       }
@@ -70,9 +73,9 @@
         "type": "rich_text",
         "rich_text": [{ "plain_text": "Bergwein" }]
       },
-      "産地": {
-        "type": "select",
-        "select": { "name": "Mosel" }
+      "地域": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "Mosel" }]
       },
       "国": {
         "type": "select",
@@ -82,7 +85,7 @@
         "type": "multi_select",
         "multi_select": [{ "name": "Riesling" }]
       },
-      "ヴィンテージ": {
+      "Vintage": {
         "type": "number",
         "number": 2022
       },
@@ -90,19 +93,15 @@
         "type": "select",
         "select": { "name": "白" }
       },
-      "評価": {
-        "type": "number",
-        "number": 4
+      "好み": {
+        "type": "select",
+        "select": { "name": "★★★★" }
       },
-      "価格": {
-        "type": "number",
-        "number": null
-      },
-      "テイスティングノート": {
+      "テイスティングコメント": {
         "type": "rich_text",
         "rich_text": [{ "plain_text": "石灰と青りんご。残糖控えめ。" }]
       },
-      "シーン": {
+      "場所": {
         "type": "select",
         "select": null
       }
@@ -119,9 +118,9 @@
         "type": "date",
         "date": null
       },
-      "評価": {
-        "type": "number",
-        "number": 3
+      "好み": {
+        "type": "select",
+        "select": { "name": "★★★" }
       },
       "色": {
         "type": "select",
@@ -144,15 +143,15 @@
         "type": "select",
         "select": { "name": "Italy" }
       },
-      "評価": {
-        "type": "number",
-        "number": 5
+      "好み": {
+        "type": "select",
+        "select": { "name": "★★★★★" }
       },
       "色": {
         "type": "select",
         "select": { "name": "赤" }
       },
-      "テイスティングノート": {
+      "テイスティングコメント": {
         "type": "rich_text",
         "rich_text": [{ "plain_text": "期間外なので集計に入らない" }]
       }
@@ -181,11 +180,11 @@
         "type": "select",
         "select": { "name": "白" }
       },
-      "評価": {
-        "type": "number",
-        "number": null
+      "好み": {
+        "type": "select",
+        "select": null
       },
-      "テイスティングノート": {
+      "テイスティングコメント": {
         "type": "rich_text",
         "rich_text": []
       }

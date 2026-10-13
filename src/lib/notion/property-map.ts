@@ -1,20 +1,30 @@
 /**
  * Notion DB の実プロパティ名 → 論理フィールドの対応。
- * preview API で実名を確認し、ここだけを修正する。
+ * 先頭ほど優先。実DB突合済み（Wine Insight DB）。
+ *
+ * 注意: 実DBの「評価」は multi_select の感覚タグであり点数ではない。
+ * 点数相当は「好み」（★〜★★★★★）を使う。
  */
 export const PROPERTY_MAP = {
   title: ["ワイン名", "Name", "タイトル", "Wine"],
   tastedAt: ["テイスティング日", "試飲日", "Date", "Tasted", "飲んだ日"],
   producer: ["生産者", "Producer", "ワイナリー", "Winery"],
-  region: ["産地", "Region", "アペラシオン", "Appellation"],
+  region: ["地域", "産地", "Region", "アペラシオン", "Appellation"],
   country: ["国", "Country"],
   grape: ["品種", "Grape", "ブドウ品種", "Varietal"],
-  vintage: ["ヴィンテージ", "Vintage", "年"],
+  vintage: ["Vintage", "ヴィンテージ", "年"],
   color: ["色", "Color", "タイプ", "Type"],
-  rating: ["評価", "Rating", "スコア", "Score", "点数"],
+  rating: ["好み", "Rating", "スコア", "Score", "点数"],
   price: ["価格", "Price", "値段"],
-  notes: ["テイスティングノート", "ノート", "Notes", "メモ", "Comment"],
-  occasion: ["シーン", "Occasion", "機会"],
+  notes: [
+    "テイスティングコメント",
+    "テイスティングノート",
+    "ノート",
+    "Notes",
+    "メモ",
+    "Comment",
+  ],
+  occasion: ["場所", "シーン", "Occasion", "機会"],
 } as const;
 
 export type LogicalField = keyof typeof PROPERTY_MAP;

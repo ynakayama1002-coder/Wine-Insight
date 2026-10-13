@@ -12,9 +12,9 @@
 ### 検証
 
 - [x] `npm test` が緑（キー不要）
-- [ ] preview API で `propertyCoverage` の `resolved` が主要フィールドで埋まる
-- [ ] 想定と違うプロパティ名は `src/lib/notion/property-map.ts` のみ修正
-- [ ] 書き込み系 API を呼んでいないこと
+- [x] 実 Notion 接続で取得成功（23件）
+- [x] `property-map` を実DB名に合わせて修正（地域 / コメント / 好み★）
+- [x] 書き込み系 API を呼んでいないこと
 
 ## Phase 2 — 解釈と永続化
 

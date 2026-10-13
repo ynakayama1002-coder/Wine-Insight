@@ -6,13 +6,15 @@ import type { NotionPageLike } from "@/lib/notion/map-page";
 describe("mapNotionPageToTastingNote", () => {
   const notes = mapNotionPages(fixture as NotionPageLike[]);
 
-  it("maps title, dates, and multi-select grapes", () => {
+  it("maps title, dates, star rating, and multi-select grapes", () => {
     const first = notes[0];
     expect(first.title).toBe("Château Demo 2018");
     expect(first.tastedAt).toBe("2026-10-06");
+    expect(first.region).toBe("Bordeaux");
     expect(first.grapes).toEqual(["Cabernet Sauvignon", "Merlot"]);
-    expect(first.rating).toBe(4.5);
+    expect(first.rating).toBe(5); // 好み: ★★★★★
     expect(first.notes).toContain("カシス");
+    expect(first.occasion).toBe("自宅");
   });
 
   it("normalizes datetime tastedAt to YYYY-MM-DD", () => {

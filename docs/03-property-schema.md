@@ -1,43 +1,38 @@
-# テイスティングノート — プロパティ構造（仮説）
+# テイスティングノート — プロパティ構造（実DB突合済み）
 
-実際の Notion DB スキーマはユーザー環境依存のため、**想定プロパティ**を定義し、実行時に `property-map.ts` で名前マッピングする。
+実 Notion DB を `/api/notion/preview` および smoke 取得で確認済み。
 
-Phase 1 の `/api/notion/preview` で実プロパティ一覧を出し、差異があればマップだけ直す。
+## 論理フィールド ↔ 実プロパティ
 
-## 想定プロパティ
+| 論理名 | 実プロパティ名 | Notion 型 | 備考 |
+|---|---|---|---|
+| `title` | ワイン名 | title | |
+| `tastedAt` | テイスティング日 | date | |
+| `producer` | 生産者 | rich_text | |
+| `region` | 地域 | rich_text | 「産地」ではない |
+| `country` | 国 | select | |
+| `grape` | 品種 | multi_select | |
+| `vintage` | Vintage | number | |
+| `color` | 色 | select | 赤 / 白 / スパークリング 等 |
+| `rating` | 好み | select | ★〜★★★★★ → 1〜5 |
+| `notes` | テイスティングコメント | rich_text | |
+| `occasion` | 場所 | select / 他 | |
 
-| 論理名 | Notion 想定名（日本語） | Notion 型 | 必須 | 用途 |
-|---|---|---|---|---|
-| `title` | ワイン名 / Name | title | ✅ | 表示名 |
-| `tastedAt` | テイスティング日 | date | ✅ | 期間フィルタ |
-| `producer` | 生産者 | rich_text / select | | 集計 |
-| `region` | 産地 | select / rich_text | | 集計 |
-| `country` | 国 | select | | 集計 |
-| `grape` | 品種 | multi_select / select | | 集計 |
-| `vintage` | ヴィンテージ | number / rich_text | | 集計 |
-| `color` | 色 | select | | 集計（赤/白/ロゼ等） |
-| `rating` | 評価 | number | | 平均・分布 |
-| `price` | 価格 | number | | 任意集計 |
-| `notes` | テイスティングノート | rich_text | | AI 解釈入力 |
-| `occasion` | シーン | select | | 任意 |
-| `cellar` | セラー由来 | checkbox | | 任意 |
+## 重要: 「評価」と「好み」
+
+| プロパティ | 型 | 意味 | MVP での扱い |
+|---|---|---|---|
+| 好み | select（★） | 主観スコア | → `rating`（数値化） |
+| 評価 | multi_select | 感覚タグ（丸みのある、等） | Phase 1 では未使用 |
+
+## その他の実プロパティ（未マッピング）
+
+品質、ボディ、酸味強度、タンニン量、香りの強さ、果実、花、スパイス、ハーブ、
+今日の気づき、ペアリング、AOC / DOC / DOCG等、余韻、バランス、複雑性 など（計38）。
+
+AI 解釈で必要になったら Phase 2 以降で段階的に取り込む。
 
 ## 未入力の扱い
 
-- `null` / 空配列のまま保持する（推測補完しない）
-- 集計時は「有効な値があるレコードのみ」を母数にする
-- レポートに `missingFieldRates` を含め、欠損率を可視化する
-
-## ページ本文（blocks）
-
-初期版は **DB プロパティのみ** 使う。ページ本文のブロック取得は Phase 2 以降（ノートがプロパティに無い場合に追加）。
-
-## スキーマ突合チェックリスト
-
-preview API 実行後:
-
-1. [ ] `tastedAt` に相当する date プロパティがあるか
-2. [ ] title プロパティ名は何か
-3. [ ] 評価は number か select（★）か
-4. [ ] 品種は multi_select か relation か
-5. [ ] 想定外プロパティで集計したいものがあるか
+- `null` / 空配列のまま保持（推測補完しない）
+- 集計時は有効値があるレコードのみを母数にする
