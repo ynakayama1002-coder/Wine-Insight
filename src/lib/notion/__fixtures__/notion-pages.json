@@ -1,0 +1,193 @@
+[
+  {
+    "id": "page-1",
+    "properties": {
+      "ワイン名": {
+        "type": "title",
+        "title": [{ "plain_text": "Château Demo 2018" }]
+      },
+      "テイスティング日": {
+        "type": "date",
+        "date": { "start": "2026-10-06" }
+      },
+      "生産者": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "Château Demo" }]
+      },
+      "地域": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "Bordeaux" }]
+      },
+      "国": {
+        "type": "select",
+        "select": { "name": "France" }
+      },
+      "品種": {
+        "type": "multi_select",
+        "multi_select": [
+          { "name": "Cabernet Sauvignon" },
+          { "name": "Merlot" }
+        ]
+      },
+      "Vintage": {
+        "type": "number",
+        "number": 2018
+      },
+      "色": {
+        "type": "select",
+        "select": { "name": "赤" }
+      },
+      "好み": {
+        "type": "select",
+        "select": { "name": "★★★★★" }
+      },
+      "評価": {
+        "type": "multi_select",
+        "multi_select": [
+          { "name": "丸みのある" },
+          { "name": "ふくよか" }
+        ]
+      },
+      "テイスティングコメント": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "カシスと杉。タンニンは静か。" }]
+      },
+      "場所": {
+        "type": "select",
+        "select": { "name": "自宅" }
+      }
+    }
+  },
+  {
+    "id": "page-2",
+    "properties": {
+      "ワイン名": {
+        "type": "title",
+        "title": [{ "plain_text": "Alpine Riesling" }]
+      },
+      "テイスティング日": {
+        "type": "date",
+        "date": { "start": "2026-10-08T19:30:00.000+09:00" }
+      },
+      "生産者": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "Bergwein" }]
+      },
+      "地域": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "Mosel" }]
+      },
+      "国": {
+        "type": "select",
+        "select": { "name": "Germany" }
+      },
+      "品種": {
+        "type": "multi_select",
+        "multi_select": [{ "name": "Riesling" }]
+      },
+      "Vintage": {
+        "type": "number",
+        "number": 2022
+      },
+      "色": {
+        "type": "select",
+        "select": { "name": "白" }
+      },
+      "好み": {
+        "type": "select",
+        "select": { "name": "★★★★" }
+      },
+      "テイスティングコメント": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "石灰と青りんご。残糖控えめ。" }]
+      },
+      "場所": {
+        "type": "select",
+        "select": null
+      }
+    }
+  },
+  {
+    "id": "page-3",
+    "properties": {
+      "ワイン名": {
+        "type": "title",
+        "title": [{ "plain_text": "日付なしワイン" }]
+      },
+      "テイスティング日": {
+        "type": "date",
+        "date": null
+      },
+      "好み": {
+        "type": "select",
+        "select": { "name": "★★★" }
+      },
+      "色": {
+        "type": "select",
+        "select": { "name": "赤" }
+      }
+    }
+  },
+  {
+    "id": "page-4",
+    "properties": {
+      "ワイン名": {
+        "type": "title",
+        "title": [{ "plain_text": "期間外ワイン" }]
+      },
+      "テイスティング日": {
+        "type": "date",
+        "date": { "start": "2026-09-01" }
+      },
+      "国": {
+        "type": "select",
+        "select": { "name": "Italy" }
+      },
+      "好み": {
+        "type": "select",
+        "select": { "name": "★★★★★" }
+      },
+      "色": {
+        "type": "select",
+        "select": { "name": "赤" }
+      },
+      "テイスティングコメント": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "期間外なので集計に入らない" }]
+      }
+    }
+  },
+  {
+    "id": "page-5",
+    "properties": {
+      "ワイン名": {
+        "type": "title",
+        "title": [{ "plain_text": "評価なし白" }]
+      },
+      "テイスティング日": {
+        "type": "date",
+        "date": { "start": "2026-10-10" }
+      },
+      "国": {
+        "type": "select",
+        "select": { "name": "France" }
+      },
+      "品種": {
+        "type": "multi_select",
+        "multi_select": [{ "name": "Chardonnay" }]
+      },
+      "色": {
+        "type": "select",
+        "select": { "name": "白" }
+      },
+      "好み": {
+        "type": "select",
+        "select": null
+      },
+      "テイスティングコメント": {
+        "type": "rich_text",
+        "rich_text": []
+      }
+    }
+  }
+]
