@@ -1,0 +1,194 @@
+[
+  {
+    "id": "page-1",
+    "properties": {
+      "ワイン名": {
+        "type": "title",
+        "title": [{ "plain_text": "Château Demo 2018" }]
+      },
+      "テイスティング日": {
+        "type": "date",
+        "date": { "start": "2026-10-06" }
+      },
+      "生産者": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "Château Demo" }]
+      },
+      "産地": {
+        "type": "select",
+        "select": { "name": "Bordeaux" }
+      },
+      "国": {
+        "type": "select",
+        "select": { "name": "France" }
+      },
+      "品種": {
+        "type": "multi_select",
+        "multi_select": [
+          { "name": "Cabernet Sauvignon" },
+          { "name": "Merlot" }
+        ]
+      },
+      "ヴィンテージ": {
+        "type": "number",
+        "number": 2018
+      },
+      "色": {
+        "type": "select",
+        "select": { "name": "赤" }
+      },
+      "評価": {
+        "type": "number",
+        "number": 4.5
+      },
+      "価格": {
+        "type": "number",
+        "number": 4500
+      },
+      "テイスティングノート": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "カシスと杉。タンニンは静か。" }]
+      },
+      "シーン": {
+        "type": "select",
+        "select": { "name": "自宅" }
+      }
+    }
+  },
+  {
+    "id": "page-2",
+    "properties": {
+      "ワイン名": {
+        "type": "title",
+        "title": [{ "plain_text": "Alpine Riesling" }]
+      },
+      "テイスティング日": {
+        "type": "date",
+        "date": { "start": "2026-10-08T19:30:00.000+09:00" }
+      },
+      "生産者": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "Bergwein" }]
+      },
+      "産地": {
+        "type": "select",
+        "select": { "name": "Mosel" }
+      },
+      "国": {
+        "type": "select",
+        "select": { "name": "Germany" }
+      },
+      "品種": {
+        "type": "multi_select",
+        "multi_select": [{ "name": "Riesling" }]
+      },
+      "ヴィンテージ": {
+        "type": "number",
+        "number": 2022
+      },
+      "色": {
+        "type": "select",
+        "select": { "name": "白" }
+      },
+      "評価": {
+        "type": "number",
+        "number": 4
+      },
+      "価格": {
+        "type": "number",
+        "number": null
+      },
+      "テイスティングノート": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "石灰と青りんご。残糖控えめ。" }]
+      },
+      "シーン": {
+        "type": "select",
+        "select": null
+      }
+    }
+  },
+  {
+    "id": "page-3",
+    "properties": {
+      "ワイン名": {
+        "type": "title",
+        "title": [{ "plain_text": "日付なしワイン" }]
+      },
+      "テイスティング日": {
+        "type": "date",
+        "date": null
+      },
+      "評価": {
+        "type": "number",
+        "number": 3
+      },
+      "色": {
+        "type": "select",
+        "select": { "name": "赤" }
+      }
+    }
+  },
+  {
+    "id": "page-4",
+    "properties": {
+      "ワイン名": {
+        "type": "title",
+        "title": [{ "plain_text": "期間外ワイン" }]
+      },
+      "テイスティング日": {
+        "type": "date",
+        "date": { "start": "2026-09-01" }
+      },
+      "国": {
+        "type": "select",
+        "select": { "name": "Italy" }
+      },
+      "評価": {
+        "type": "number",
+        "number": 5
+      },
+      "色": {
+        "type": "select",
+        "select": { "name": "赤" }
+      },
+      "テイスティングノート": {
+        "type": "rich_text",
+        "rich_text": [{ "plain_text": "期間外なので集計に入らない" }]
+      }
+    }
+  },
+  {
+    "id": "page-5",
+    "properties": {
+      "ワイン名": {
+        "type": "title",
+        "title": [{ "plain_text": "評価なし白" }]
+      },
+      "テイスティング日": {
+        "type": "date",
+        "date": { "start": "2026-10-10" }
+      },
+      "国": {
+        "type": "select",
+        "select": { "name": "France" }
+      },
+      "品種": {
+        "type": "multi_select",
+        "multi_select": [{ "name": "Chardonnay" }]
+      },
+      "色": {
+        "type": "select",
+        "select": { "name": "白" }
+      },
+      "評価": {
+        "type": "number",
+        "number": null
+      },
+      "テイスティングノート": {
+        "type": "rich_text",
+        "rich_text": []
+      }
+    }
+  }
+]
